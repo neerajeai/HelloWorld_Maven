@@ -7,6 +7,16 @@
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>jar</packaging>
 
+<repositories>
+	<repository>
+		<id>central</id>
+        <name>libs-snapshot</name>
+        <url>https://repo.spring.io/libs-snapshot</url>
+        <snapshots><enabled>true</enabled></snapshots>
+        <releases><enabled>false</enabled></releases>
+    </repository>
+</repositories>
+
 <dependencies>
 	<dependency>
 		<groupId>org.apache.commons</groupId>
@@ -26,6 +36,13 @@
     	<groupId>org.hibernate</groupId>
     	<artifactId>hibernate-core</artifactId>
     	<version>5.4.10.Final</version>
+	</dependency>
+	
+<!-- https://repo.spring.io/libs-snapshot/org/springframework/spring-core/5.2.3.BUILD-SNAPSHOT/ -->
+	<dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-core</artifactId>
+    	<version>5.2.3.BUILD-SNAPSHOT</version>
 	</dependency>
 </dependencies>
 
