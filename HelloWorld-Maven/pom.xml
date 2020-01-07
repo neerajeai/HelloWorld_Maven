@@ -47,7 +47,66 @@
 </dependencies>
 
 <build>
-	<finalName>hello-mvn</finalName> <!-- override the application name; overrides are done under build section -->
+<!-- override the application name; overrides are done under build section -->
+	<finalName>hello-mvn</finalName> 
+	
+	<plugins>
+	<!-- compiler plug-in -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.8.1</version>
+			<configuration>
+				<source>1.8</source>
+				<target>1.8</target>
+			</configuration>
+		</plugin>
+	
+	<!-- jar plug-in -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-jar-plugin</artifactId>
+			<version>3.2.0</version>
+			<configuration>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.xml</exclude>
+				</excludes>
+			</configuration>
+		</plugin>
+		
+		<!-- source plug-in -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-source-plugin</artifactId>
+			<version>3.1.0</version>
+			<executions>
+				<execution>
+					<goals>
+						<goal>jar</goal>
+					</goals>
+					<phase>package</phase>
+				</execution>
+			</executions>
+		</plugin>
+		
+		<!-- javadoc plug-in -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<version>3.1.0</version>
+			<executions>
+				<execution>
+					<goals>
+						<goal>jar</goal>
+					</goals>
+					<phase>package</phase>
+				</execution>
+			</executions>
+		</plugin>
+	</plugins>
 </build>
 
 </project>
